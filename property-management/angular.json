@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "property-management:build"
+            "buildTarget": "property-management:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "property-management:build:production"
+              "buildTarget": "property-management:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "property-management:build"
+            "buildTarget": "property-management:build"
           }
         },
         "test": {
@@ -124,7 +124,7 @@
       }
     }
   },
-  "defaultProject": "property-management",
+  
   "cli": {
     "analytics": "9fa278c3-e334-47cc-947a-a0190361801b"
   }
