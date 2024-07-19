@@ -1,12 +1,13 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import PropertyCard from './PropertyCard';
+
+import PropertyCardHorizontal from './PropertyCard';
 
 
-const PropertySlider = ({ title, endpoint}) => {
+const RentPropertySlider = ({ title, endpoint}) => {
 
 
-const [latestPropertiesForSearch,setLatestPropertiesForSearch] = useState([]);
+const [latestPropertiesForRent,setLatestPropertiesForRent] = useState([]);
   
 
   const fetchData = async () => {
@@ -14,7 +15,7 @@ const [latestPropertiesForSearch,setLatestPropertiesForSearch] = useState([]);
       .then(response => response.json())
       .then(data => {
         console.log(data)
-        setLatestPropertiesForSearch(data.data.latestPropertiesForSearch);
+        setLatestPropertiesForRent(data.data.latestPropertiesToRent);
         
         console.log(data.data.latestPropertiesToRent);
        
@@ -34,8 +35,8 @@ const [latestPropertiesForSearch,setLatestPropertiesForSearch] = useState([]);
       <div className="container mx-auto">
         <h2 className="text-2xl font-bold mb-4">{title}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {latestPropertiesForSearch.map(property => (
-            <PropertyCard key={property.id} property={property} />
+          {latestPropertiesForRent.map(property => (
+            <PropertyCardHorizontal key={property.id} property={property} />
           ))}
         </div>
 
@@ -44,4 +45,4 @@ const [latestPropertiesForSearch,setLatestPropertiesForSearch] = useState([]);
   );
 };
 
-export default PropertySlider;
+export default RentPropertySlider;
