@@ -33,6 +33,7 @@ interface EnquiryResponse {
   providedIn: 'root'
 })
 export class EnquiriesComponent implements OnInit {
+  [x: string]: any;
    enquiries: Enquiry[] = [];
    selectedEnquiry: Enquiry | null = null;
   //enquiries: any;
@@ -52,8 +53,22 @@ getAll(){
     console.log("response ......",this.enquiries)
   })
 }
-viewEnquiry(enquiryId: number){
-  this.router.navigate([`/enquiries/${enquiryId}`]);
+// viewEnquiry(enquiryId: number){
+//   this.router.navigate([`/enquiries/${enquiryId}`]);
+// }
+viewEnquiry(enquiryId: number) {
+  // Fetch enquiry details from the API
+  this.enquiryService.getSingleEnquiry(enquiryId.toString()).subscribe((data: Enquiry) => {
+    // Set the selected enquiry data for the modal
+    this.selectedEnquiry = data; 
+    console.log(data)
+    // Open the modal
+    this.openModal(enquiryId); 
+    
+
+  })
+  
+   
 }
 deleteEnquiry(enquiryId: number) {
   if (confirm("Are you sure you want to delete this enquiry?")) {

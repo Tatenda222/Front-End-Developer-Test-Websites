@@ -1,0 +1,40 @@
+
+
+<table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Email Address</th>
+        <th>Message</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let enquiry of enquiries">
+        <td>{{ enquiry.firstName }}</td>
+        <td>{{ enquiry.lastName }}</td>
+        <td>{{ enquiry.phoneNumber }}</td>
+        <td>{{ enquiry.email }}</td>
+        <td>{{ enquiry.message }}</td>
+        <td>
+          <button (click)="viewEnquiry(enquiry.id)">View</button>
+          <button (click)="deleteEnquiry(enquiry.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+<!-- Modal for viewing enquiry details -->
+<div class="modal"  *ngIf="selectedEnquiry">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h2>Enquiry Details</h2>
+      <p><strong>First Name:</strong> {{ selectedEnquiry?.firstName }}</p>
+      <p><strong>Last Name:</strong> {{ selectedEnquiry?.lastName }}</p>
+      <p><strong>Phone Number:</strong> {{ selectedEnquiry?.phoneNumber }}</p>
+      <p><strong>Email Address:</strong> {{ selectedEnquiry?.email }}</p>
+      <p><strong>Message:</strong> {{ selectedEnquiry?.message }}</p>
+    </div>
+  </div>
