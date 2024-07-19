@@ -40,9 +40,10 @@ const Page = () => {
             dialingCode,
             phoneNumber,
             message,
-            listingId: property.id,
+            listingId: listingId,
             ownedBy: "tatendamhaka22@gmail.com",
         };
+        console.log(enquiryData);
 
         try {
             const response = await fetch('https://fsboafrica.com/api/enquiries/create', {
@@ -53,7 +54,8 @@ const Page = () => {
                 body: JSON.stringify(enquiryData),
             });
             const data = await response.json();
-            if (data.status === "success") {
+            console.log(data);
+            if (data) {
                 alert('Enquiry submitted successfully!');
             } else {
                 alert('Error submitting enquiry');
@@ -74,26 +76,10 @@ const Page = () => {
     }
 
     return (
-    //     <div>
-    //         <h1>{property.title}</h1>
-    //         <p>{property.description}</p>
-    //         <p>Price: {property.currency} {property.price}</p>
-    //         <p>Address: {property.address}</p>
-    //         <p>Bedrooms: {property.bedrooms}</p>
-    //         <p>Bathrooms: {property.bathrooms}</p>
-    //         <p>Size: {property.propertySize}</p>
-    //         <Carousel>
-    //             {property.images.map((image, index) => (
-    //                 <div key={index}>
-    //                     <img src={image.filePath} alt={`Property Image ${index + 1}`} />
-    //                 </div>
-    //             ))}
-    //         </Carousel>
-    //     </div>
-    // );
-
-    <div className="container mx-auto px-4">
-            <div className="carousel-container mb-4">
+   <div className='bg-gray-50'>
+    <div className="container max-[1000px] mx-auto flex flex-row gap-x-3 px-4">
+           <div className='flex w-full flex-col gap-y-4'>
+           <div className="carousel-container mb-4">
                 <Carousel>
                     {property.images.map((image, index) => (
                         <div key={index}>
@@ -115,7 +101,10 @@ const Page = () => {
                     <p className="mb-2">Bathrooms: {property.bathrooms}</p>
                     <p className="mb-2">Size: {property.propertySize}</p>
                 </div>
-                <div className="w-1/3 pl-4">
+              
+            </div>
+           </div>
+            <div className="w-[400px] pl-4 bg-white border p-2 h-fit rounded-md">
                     <h2 className="text-xl font-bold mb-2">Enquiry Form</h2>
                     <form onSubmit={handleEnquirySubmit}>
                         <div className="mb-2">
@@ -183,8 +172,10 @@ const Page = () => {
 </button>
                     </form>
                 </div>
-            </div>
         </div>
+   </div>
+
+    
     );
 };
 

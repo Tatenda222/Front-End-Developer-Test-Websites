@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "property-management": {
+    "graphs": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/property-management",
+            "outputPath": "dist/graphs",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -29,12 +29,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -64,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "property-management:build:production"
+              "buildTarget": "graphs:build:production"
             },
             "development": {
-              "buildTarget": "property-management:build:development"
+              "buildTarget": "graphs:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -99,6 +94,6 @@
     }
   },
   "cli": {
-    "analytics": "4333385b-df24-4dd9-b545-d8f093c33936"
+    "analytics": "da32ba5d-3830-4162-82e8-74e10afef41b"
   }
 }
