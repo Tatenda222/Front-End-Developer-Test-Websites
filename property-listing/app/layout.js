@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { ChevronDownIcon } from '@heroicons/react/24/solid';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,8 +17,8 @@ export default function RootLayout({ children }) {
       <nav className="w-full z-50 border-b top-0 sticky bg-white shadow-md px-24 p-2 flex flex-row items-center justify-between">
         <h1>Logo</h1>
         <ul className="flex flex-row items-center justify-between gap-x-2">
-          <li>For sale</li>
-          <li>To rent</li>
+          <li  className="flex items-center">For sale  <ChevronDownIcon className="w-5 h-5 ml-1" /></li>
+          <li className="flex items-center">To rent <ChevronDownIcon className="w-5 h-5 ml-1" /></li>
           <li>New Developments</li>
           <li>Showdays</li>
           <li>Agencies</li>

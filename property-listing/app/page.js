@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import PropertyCard from "./components/propertyCard";
 import ServiceCard from "./components/serviceCard";
 import Link from "next/link";
+import { Carousel } from "react-responsive-carousel";
 
 export default function Home() {
   const [activeButton, setActiveButton] = useState('For Sale');
@@ -75,6 +76,7 @@ export default function Home() {
       </section>
       <div className="bg-gray-50 flex flex-col justify-center p-5 items-center">
     <h1 className="text-xl text-gray-700 font-bold text-left max-w-[1000px]  w-full mt-4">Featured Properties</h1>
+    <Carousel>
     
       {loading ? <p>Loading...</p> : <div className="grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-4 w-full max-w-[1000px] py-4">
         {latestPropertiesForSale.map((property, index) => (
@@ -82,15 +84,19 @@ export default function Home() {
       <PropertyCard key={index} property={property} />
     ))}
       </div>}
+      </Carousel>
     </div>
     <div className="flex flex-col justify-center p-5 items-center">
     <h1 className="text-xl text-gray-700 font-bold text-left max-w-[1000px]  w-full mt-4">Featured Properties</h1>
+    <Carousel>
+
     {loading ? <p>Loading...</p> : <div className="grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-4 w-full max-w-[1000px] py-4">
         {latestPropertiesToRent.map((property, index) => (
           // <p key={index}>{property.title}</p>
       <PropertyCard key={index} property={property} />
     ))}
       </div>}
+      </Carousel>
     </div>
     <div className="bg-gray-50 flex flex-col justify-center p-5 py-10 items-center">
       <div className="grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-4 w-full max-w-[1000px] py-4">

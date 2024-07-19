@@ -1,0 +1,104 @@
+.line {
+    
+    fill: none;
+    stroke: blue;
+    stroke-width: 2;canvas {
+    border: 1px solid #000;
+    margin-top: 0px;
+  }
+}
+
+.firstgraph{
+    background-color: rgb(186, 122, 246);
+    height: 200px;
+    width: 200px;
+}
+
+.secondgraph{
+    background-color: rgb(122, 246, 186);
+    height: 200px;
+    width: 200px;
+}
+
+.thirdgraph{
+    background-color: rgb(246, 186, 122);
+    height: 200px;
+    width: 200px;
+}
+
+.fourthgraph{
+    background-color: rgb(246, 122, 186);
+    height: 200px;
+    width: 200px;
+}
+
+.five {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+  }
+  .line {
+    fill: none;
+    stroke-width: 2;
+  }
+  .line-1 {
+    stroke: blue;
+  }
+  .line-2 {
+    stroke: green;
+  }
+  .line-3 {
+    stroke: red;
+  }
+
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar {
+    width: 250px;
+    height: 100vh;
+    background-color: #2c3e50;
+    color: white;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .navbar .logo {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+  .navbar .logo img {
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .navbar .menu {
+    padding: 20px;
+  }
+  .navbar .menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+  }
+  .navbar .menu a.active {
+    background-color: #34495e;
+    border-radius: 5px;
+  }
+  .navbar .footer {
+    padding: 20px;
+  }
+  .navbar .footer a {
+    color: white;
+    text-decoration: none;
+  }
+  .main-content {
+    margin-left: 250px;
+    padding: 20px;
+  }
+  

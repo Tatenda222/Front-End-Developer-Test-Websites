@@ -4,6 +4,7 @@
 import { useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
+
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
@@ -170,7 +171,13 @@ const Page = () => {
                         <button type="submit" className="w-full py-2 bg-blue-600 text-white font-semibold rounded-full">
   Send Message
 </button>
+
+
                     </form>
+                   
+                <p> By sending enquiry messages you agree to Solds.co.zw <br></br>
+                   <a  href="#" color='red'> Terms and Conditions </a></p>
+                  
                 </div>
         </div>
    </div>
